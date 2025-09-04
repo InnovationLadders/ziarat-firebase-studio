@@ -17,6 +17,12 @@ export function Header() {
   const [isMounted, setIsMounted] = useState(false);
   const { user, loading } = useAuth();
 
+  // Debug logging for user state
+  useEffect(() => {
+    console.log('Header - User state:', user);
+    console.log('Header - Loading state:', loading);
+  }, [user, loading]);
+
   useEffect(() => {
     setIsMounted(true);
   }, []);

@@ -105,6 +105,13 @@ export async function registerAction(prevState: any, formData: FormData) {
             role: 'user',
         });
         
+        console.log('Register Action - User created with data:', {
+            name: parsed.data.name,
+            email: parsed.data.email,
+            phone: parsed.data.phone,
+            role: 'user',
+        });
+        
         cookies().set('firebaseIdToken', idToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
